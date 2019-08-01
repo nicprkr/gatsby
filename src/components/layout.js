@@ -18,21 +18,19 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0,
-          }}
-        >
+        <Header />
+        <div>
           <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}, Built with
+          <footer style={{display: `flex`, flexDirection: `row`, justifyContent:`space-between`}}>
+            <p>
+            © {new Date().getFullYear()} | Built with
             {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a> by Nicola Parker
-          </footer>
+            <a href="https://www.gatsbyjs.org">Gatsby</a> by Nicola Codes
+            </p> 
+            <p>
+            <a href="hhttps://twitter.com/nicprkr">Twitter</a> | <a href="https://dribbble.com/nicprkr/"> Dribbble</a> | <a href="https://www.linkedin.com/in/nicprkr/"> LinkedIn</a> 
+            </p>
+          </footer>  
         </div>
       </>
     )}

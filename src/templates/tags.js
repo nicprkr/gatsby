@@ -1,17 +1,19 @@
 import React from 'react';
 import { Link } from "gatsby";
+import Layout from "../components/layout"
 
-const Tags = ({pathContext}) => {
-  const {posts, tagName} = pathContext;
+const Tags = ({pageContext}) => {
+  const {posts, tagName} = pageContext;
 
   if (posts) {
     return (
+      <Layout>
       <div>
-        <span>
-          Posts about {tagName};
-        </span>
+        <h1>
+          Posts about {tagName}
+        </h1>
 
-        <ul>
+        <ul style={{display: `flex`, flexDirection: `column`}}>
           {posts.map (post => {
             return (
               <li>
@@ -23,6 +25,7 @@ const Tags = ({pathContext}) => {
           })}
         </ul>
       </div>
+      </Layout>
     );
   }
 };

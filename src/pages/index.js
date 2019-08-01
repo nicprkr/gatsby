@@ -2,9 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
-
 import containerStyles from "../components/container.module.css"
 
 const IndexPage = ({data}) => {
@@ -12,35 +10,30 @@ const IndexPage = ({data}) => {
     return (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-        
-    <Link to="/page-2/">Go to page 2</Link>
-        
-    <div 
-        style={{
-            display: `flex`, flexDirection: `row`}}>
+    <section>
+        <h2>About</h2>
+      <p>Web development tidbits &amp; tricks.</p>
+    </section>
+<section>
+<h2>Recent Posts</h2>
+    <div>
       {posts.map (({node: post}) => {
         const {frontmatter} = post;
         return (
           <div className={containerStyles.container}>
-            <h2>
+            <h3>
               <Link to={frontmatter.path}>
                 {frontmatter.title}
               </Link>
-            </h2>
-            <p>{frontmatter.date}</p>
+            </h3>
+            <p className={containerStyles.date}>{frontmatter.date}</p>
             <p>{frontmatter.excerpt}</p>
-              <ul>
+              <ul className={containerStyles.tagList}>
               {post.frontmatter.tags.map (tag => {
                 return (
                   <li>
-                    <Link to={`/tags/${tag}`}>
-                      {tag}
+                    <Link className={containerStyles.tag} to={`/tags/${tag}`}>
+                      #{tag}
                     </Link>
                   </li>
                 );
@@ -49,8 +42,9 @@ const IndexPage = ({data}) => {
           </div>
         );
       })}
+  </div>
+  </section>
 
-    </div>
   </Layout>
 )
 }
@@ -59,7 +53,7 @@ export default IndexPage
 
 export const query = graphql`
     query IndexQuery {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       totalCount
       edges {
         node {

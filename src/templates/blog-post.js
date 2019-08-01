@@ -6,34 +6,43 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
-const Template = ({data, location, pathContext}) => {
+const Template = ({data, location, pageContext}) => {
   const {markdownRemark: post} = data;
   const {frontmatter, html} = post;
   const {title, date} = frontmatter;
-  const {next, prev} = pathContext;
+  const {next, prev} = pageContext;
 
   return (
       <Layout>
-    <SEO title={`${frontmatter.title} - My Blog`}  keywords={frontmatter.tags} />
+    <SEO title={`${frontmatter.title} | Nicola Codes`}  keywords={frontmatter.tags} />
     <div>
-      <Helmet title={`${frontmatter.title} - My Blog`} />
+      <Helmet title={`${frontmatter.title} | Nicola Codes`} />
       <div>
         <h1>{frontmatter.title}</h1>
-        <h3>{frontmatter.date}</h3>
+        <span style={{color: `grey`}}>{frontmatter.date}</span>
+<div style={{padding: `2rem 0 1rem`, borderBottom: `1px solid #d4d4d4`, marginBottom: `1rem`}} >
         <div dangerouslySetInnerHTML={{__html: html}}/>
-        <p>
+        <div>
+        <p style={{fontSize:`0.8rem`}}><i>Nicola is a web developer from Vancouver, B.C. and a professional curator of random facts.</i></p>
+      </div>
+      </div>
+
+        <div style={{display: `flex`, width: `100%`, flexFlow: `row nowrap`, justifyContent: `space-between`, padding: `1rem 0`}}>
+          <p>
           {prev &&
             <Link to={prev.frontmatter.path}>
-              Previous: {prev.frontmatter.title}
+              &#8592; {prev.frontmatter.title}
             </Link>
           }
         </p>
         <p>
           {next &&
             <Link to={next.frontmatter.path}>
-              Next: {next.frontmatter.title}
+              {next.frontmatter.title} &#8594; 
             </Link>}
         </p>
+      </div>
+
       </div>
     </div>
   </Layout>

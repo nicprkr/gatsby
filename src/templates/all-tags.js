@@ -1,12 +1,17 @@
 
 import React from 'react';
-import { Link } from "gatsby";
+import { Link } from "gatsby"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 
-const AllTags = ({pathContext}) => {
-  const {tags} = pathContext;
-
+const AllTags = ({pageContext}) => {
+  const {tags} = pageContext;
   if (tags) {
     return (
+      <Layout>
+      <SEO title={`${tags} | Nicola Codes`}  keywords={tags} />
+    <div>
+        <h1>{tags}</h1>
       <div>
         <ul>
           {tags.map (tag => {
@@ -20,6 +25,8 @@ const AllTags = ({pathContext}) => {
           })}
         </ul>
       </div>
+      </div>
+      </Layout>
     );
   }
 };

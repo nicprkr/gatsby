@@ -1,13 +1,20 @@
 .container {
-  margin: 1rem auto;
-  max-width: 400px;
-    background-color: #f4f4f4;
-    border: 5px solid #333;
-    padding: 1rem;
+margin-bottom: 2rem;
+border-bottom: 1px solid #d4d4d4
 }
-ul {
+.date {
+  opacity: 0.8;
+  font-size: 0.8rem;
+}
+.tagList {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
     list-style-type: none;
+    margin: 0;
+}
+ul li {
+  padding-right: 0.5rem;
+}
+.tag {
+  font-size: 0.8rem;
 }
