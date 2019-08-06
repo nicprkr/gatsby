@@ -28,7 +28,7 @@ const Layout = ({ children }) => (
             <a href="https://www.gatsbyjs.org">Gatsby</a> by Nicola Codes
             </p> 
             <p>
-            <a href="hhttps://twitter.com/nicprkr">Twitter</a> | <a href="https://dribbble.com/nicprkr/"> Dribbble</a> | <a href="https://www.linkedin.com/in/nicprkr/"> LinkedIn</a> 
+            <a href="https://twitter.com/nicprkr">Twitter</a> | <a href="https://dribbble.com/nicprkr/"> Dribbble</a> | <a href="https://www.linkedin.com/in/nicprkr/"> LinkedIn</a> 
             </p>
           </footer>  
         </div>

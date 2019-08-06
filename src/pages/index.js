@@ -12,7 +12,7 @@ const IndexPage = ({data}) => {
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <section>
         <h2>About</h2>
-      <p>Web development tidbits &amp; tricks.</p>
+      <p>I'm a web developer from Vancouver, B.C., and I spend a lot of time trying to figure out how to code things. These are some web development tidbits &amp; tricks I've picked up along the way.</p>
     </section>
 <section>
 <h2>Recent Posts</h2>

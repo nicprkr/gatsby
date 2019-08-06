@@ -13,6 +13,22 @@
   *:after {
     box-sizing: inherit;
   }
+
+  ::selection {
+    background: var(--color);
+    color: #ffffff;
+}
+.atrocious::selection {
+    background-color: yellow;
+    color: var(--color);
+    cursor: crosshair !important;
+    caret-color: red;
+    outline: 2px solid var(--secondary);
+    text-decoration: green wavy underline;
+    text-emphasis-color: blue;
+    text-shadow: 12px 6px 6px orange;
+}
+
   html {
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -64,6 +80,7 @@
     }
     a:hover {
         opacity: 0.6;
+        text-decoration: var(--secondary) wavy underline;
     }
 
     footer {

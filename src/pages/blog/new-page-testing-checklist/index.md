@@ -16,15 +16,17 @@ Don't want people pointing out bugs in your beautiful new page? Follow this quic
 6. [Display](#display)
 7. [Spellcheck](#spellcheck)
 
+==
+
 <a name="prebuild"></a>
 ### Pre-Build
 
-Who do you need to support? What devices do they use? What browsers do they use? If you have the data, make some choices about:
+Before you start coding, it's worth figuring out what you actually need to build. Who do you need to support? What devices do they use? What browsers do they use? Will you end users need to make changes themselves? If you have the data, make some choices about:
 - what sort of browser compatitbility you need
 - what sort of tools you should use
 - what metrics and performance indicators you need to gauge the success of your project. 
 
-Top Tools: [CanIUse](https://caniuse.com), [Google Analytics](https://google-analytics.com)
+<b>Top Tools</b>: [CanIUse](https://caniuse.com), [Google Analytics](https://google-analytics.com)
 
 ==
 <a name="code"></a>
@@ -40,7 +42,7 @@ Look good, feel good. Ensure your CSS is functioning properly using this free to
 
 Make sure a stray ```div``` tag won't ruin your layout.
 
-<b>Top Tool:</b> [W3 HTML Validator](https://validator.w3.org/) to m
+<b>Top Tool:</b> [W3 HTML Validator](https://validator.w3.org/)
 
 Although it's worth a deep-dive into what accessibility means and how it works, you that your site is complying with best practices.
 
