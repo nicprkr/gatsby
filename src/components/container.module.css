@@ -36,13 +36,7 @@ a.tag::after {
   height:0;
   width:0;
 }
-.flow {
-  padding: 2rem 0 1rem;
-  margin-bottom: 1rem;
-}
-.flow div > * + * {
-  margin-top: 1.5rem;
-}
+
 pre {
   background: #f3f3f3;
   padding: 1rem;
@@ -50,9 +44,7 @@ pre {
   overflow: auto;
   white-space: pre;
 }
-h3 {
-  border-bottom: 1px solid pink;
-}
+
 .aside {
   font-size: 0.9rem;
   background: #f4f4f4;

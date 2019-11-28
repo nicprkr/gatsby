@@ -6,6 +6,7 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import containerStyles from "../components/container.module.css"
+import blogStyles from "../components/blog.module.css"
 
 const Template = ({data, location, pageContext}) => {
   const {markdownRemark: post} = data;
@@ -21,12 +22,12 @@ const Template = ({data, location, pageContext}) => {
       <div className={containerStyles.padded}>
         <h1>{frontmatter.title}</h1>
         <span style={{color: `grey`}}>{frontmatter.date}</span>
-<div className={containerStyles.flow} >
+<article className={blogStyles.flow} >
         <div dangerouslySetInnerHTML={{__html: html}}/>
         <div className={containerStyles.aside}>
         <p style={{fontSize:`0.8rem`}}><i>Nicola is a web developer from Vancouver, B.C. and a professional curator of random facts.</i></p>
       </div>
-      </div>
+      </article>
 
         <div style={{display: `flex`, width: `100%`, flexFlow: `row nowrap`, justifyContent: `space-between`, padding: `1rem 0`}}>
           <p>

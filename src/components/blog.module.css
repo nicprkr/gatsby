@@ -1,3 +1,13 @@
 .flow > * + * {
     margin-top: 1.5rem;
 }
+article h3 {
+    border-bottom: 1px solid pink;
+  }
+  .flow {
+    padding: 2rem 0 1rem;
+    margin-bottom: 1rem;
+  }
+  .flow div > * + * {
+    margin-top: 1.5rem;
+  }

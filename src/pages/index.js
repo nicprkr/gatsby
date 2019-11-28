@@ -28,11 +28,11 @@ const IndexPage = ({data}) => {
         const {frontmatter} = post;
         return (
           <div className={containerStyles.container}>
-            <h3>
+            <h4>
               <Link to={frontmatter.path}>
                 {frontmatter.title}
               </Link>
-            </h3>
+            </h4>
             <p className={containerStyles.date}>{frontmatter.date}</p>
             <p>{frontmatter.excerpt}</p>
               <ul className={containerStyles.tagList}>
