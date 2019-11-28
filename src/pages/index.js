@@ -10,12 +10,19 @@ const IndexPage = ({data}) => {
     return (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <section>
+<article class="home">
+    <section class="about">
         <h2>About</h2>
       <p>I'm a web developer from Vancouver, B.C., and I spend a lot of time trying to figure out how to code things. These are some web development tidbits &amp; tricks I've picked up along the way.</p>
+      <br/>
+      <h2>Contact</h2>
+      <a href="mailto:hi@nicola.codes">hi@nicola.codes</a>
     </section>
+ 
+    
 <section>
-<h2>Recent Posts</h2>
+
+<h2 class="spaced">Recent Posts</h2>
     <div>
       {posts.map (({node: post}) => {
         const {frontmatter} = post;
@@ -44,7 +51,7 @@ const IndexPage = ({data}) => {
       })}
   </div>
   </section>
-
+  </article>
   </Layout>
 )
 }

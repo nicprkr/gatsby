@@ -15,8 +15,18 @@ const Header = () => (
       </div>
       <ul className={styles.navlinks}> 
           <li>
-          <Link className={styles.bigHeader} to="/">Nicola Codes</Link>
+            <Link className={styles.bigHeader} to="/">Nicola Codes</Link>
           </li>
+
+      </ul>
+      <ul class="secondary">
+        <li>
+          <Link className={styles.bigHeader} to="/projects/">Projects</Link>
+        </li>
+        <li>
+          <Link className={styles.bigHeader} to="/about/">About</Link>
+        </li>
+
       </ul>
     </section>
     

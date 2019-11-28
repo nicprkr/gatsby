@@ -5,6 +5,7 @@ import Helmet from 'react-helmet';
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
+import containerStyles from "../components/container.module.css"
 
 const Template = ({data, location, pageContext}) => {
   const {markdownRemark: post} = data;
@@ -17,12 +18,12 @@ const Template = ({data, location, pageContext}) => {
     <SEO title={`${frontmatter.title} | Nicola Codes`}  keywords={frontmatter.tags} />
     <div>
       <Helmet title={`${frontmatter.title} | Nicola Codes`} />
-      <div>
+      <div className={containerStyles.padded}>
         <h1>{frontmatter.title}</h1>
         <span style={{color: `grey`}}>{frontmatter.date}</span>
-<div style={{padding: `2rem 0 1rem`, borderBottom: `1px solid #d4d4d4`, marginBottom: `1rem`}} >
+<div className={containerStyles.flow} >
         <div dangerouslySetInnerHTML={{__html: html}}/>
-        <div>
+        <div className={containerStyles.aside}>
         <p style={{fontSize:`0.8rem`}}><i>Nicola is a web developer from Vancouver, B.C. and a professional curator of random facts.</i></p>
       </div>
       </div>

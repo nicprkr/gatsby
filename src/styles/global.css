@@ -2,22 +2,23 @@
 :root {
   --color: #3D348B;
   --secondary: #CA054D;  
+  --dark: #233131;
+  --light: #c4b9ae;
+  --pink: #ca054d;
+  --yellow: #FFFF66;
+  --grey: #cacaca;
 }
-* {
-    box-sizing: border-box;
-    transition: 0.2s;
-  }
-  *:before {
-    box-sizing: inherit;
-  }
-  *:after {
-    box-sizing: inherit;
-  }
-
+    /* Box sizing rules */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      transition: 0.2s;
+    }
+    
   ::selection {
-    background: var(--color);
-    color: #ffffff;
-}
+    background: var(--yellow);
+  }
 .atrocious::selection {
     background-color: yellow;
     color: var(--color);
@@ -37,55 +38,126 @@
       -ms-text-size-adjust: 100%;
       -webkit-text-size-adjust: 100%;
     }
-    body {
-      margin:0;
-      padding: 0;
-      background-color: #fff;
-      color: #3d3d3d;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      word-wrap: break-word;
-      font-kerning: normal;
-      -moz-font-feature-settings: "kern", "liga", "clig", "calt";
-      -ms-font-feature-settings: "kern", "liga", "clig", "calt";
-      -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
-      font-feature-settings: "kern", "liga", "clig", "calt";
-    }
-    .wrapper {
-      overflow-x:hidden !important;
-      max-width:99.9vw;
-    } 
-    main {
-      max-width: 640px;
-      padding:0 1rem;
-      margin: 0 auto;
-    }
-    main section {
-      padding: 1rem 0;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Share Tech Mono', monospace;
-    }
-    h2 {
-      font-size: 2.6rem;
-      opacity:0.6;
-    }
-    h3 {
-      margin-bottom: 0.5rem;
-    }
-    a {
-        text-decoration: none;
-        color:var(--secondary);
-        opacity: 1;
-    }
-    a:hover {
-        opacity: 0.6;
-        text-decoration: var(--secondary) wavy underline;
-    }
 
+    /* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  background-color: rgb(248, 234, 234);
+  color: #3d3d3d;
+  line-height: 1.5;
+    font-size: 18px;
+    font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+/* article > * + * {
+  margin-top: 1.4em;
+} */
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+a:not(.not-text) {
+  color: var(--pink);
+  text-decoration: none;
+  position: relative;
+  z-index:99;
+}
+a:focus {
+  outline: 2px dotted var(--pink);
+}
+a:not(.not-text)::after {
+  content: '';
+  left: 0;
+  bottom: 0;
+  min-height: 8px;
+  height: 20%;
+  max-width:800px;
+  width:100%;
+  background: var(--yellow);
+  display: inline-block;
+  position: absolute;
+  z-index: -1;
+}
+a:not(.not-text):hover {
+  opacity: 0.9;
+}
+a:not(.not-text):hover::after {
+  height: 20px;
+}
     footer {
         padding:2rem 0;
-        max-width:640px;
+        max-width:1200px;
         margin:0 auto;
         font-size: 0.8rem;
+    }
+    h1, h2, h3 {
+      font-family: 'Share Tech Mono', monospace;
+
+    }
+    h2 {
+      margin-bottom: 1.2rem;
     }

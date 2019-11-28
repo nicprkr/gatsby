@@ -1,6 +1,10 @@
 .container {
-margin-bottom: 2rem;
-border-bottom: 1px solid #d4d4d4
+  margin-bottom: 2rem;
+  padding: 0 2rem;
+  border-bottom: 1px solid #d4d4d4;
+}
+.padded {
+  padding: 2rem;
 }
 .date {
   opacity: 0.8;
@@ -14,7 +18,46 @@ border-bottom: 1px solid #d4d4d4
 }
 ul li {
   padding-right: 0.5rem;
+  margin: 1rem 0 2rem;
 }
-.tag {
+a.tag {
   font-size: 0.8rem;
+  border: 1px solid var(--pink);
+  padding: 6px 12px;
+  border-radius: 16px;
+
+}
+a.tag:hover {
+  background: var(--pink);
+  color: white;
+}
+a.tag::after {
+  content: '';
+  height:0;
+  width:0;
+}
+.flow {
+  padding: 2rem 0 1rem;
+  margin-bottom: 1rem;
+}
+.flow div > * + * {
+  margin-top: 1.5rem;
+}
+pre {
+  background: #f3f3f3;
+  padding: 1rem;
+  border-radius: 16px;
+  overflow: auto;
+  white-space: pre;
+}
+h3 {
+  border-bottom: 1px solid pink;
+}
+.aside {
+  font-size: 0.9rem;
+  background: #f4f4f4;
+  border: 1px solid #d4d4d4;
+  border-radius: 16px;
+  padding: 1rem;
+  margin-top: 2rem;
 }
