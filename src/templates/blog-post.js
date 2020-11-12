@@ -17,19 +17,21 @@ const Template = ({data, location, pageContext}) => {
   return (
       <Layout>
     <SEO title={`${frontmatter.title} | Nicola Codes`}  keywords={frontmatter.tags} />
-    <div>
       <Helmet title={`${frontmatter.title} | Nicola Codes`} />
-      <div className={containerStyles.padded}>
+        <header class="wrapper">
         <h1>{frontmatter.title}</h1>
-        <span style={{color: `grey`}}>{frontmatter.date}</span>
-<article className={blogStyles.flow} >
-        <div dangerouslySetInnerHTML={{__html: html}}/>
-        <div className={containerStyles.aside}>
-        <p style={{fontSize:`0.8rem`}}><i>Nicola is a web developer from Vancouver, B.C. and a professional curator of random facts.</i></p>
-      </div>
-      </article>
+        <span>{frontmatter.date}</span>
+        </header>
 
-        <div style={{display: `flex`, width: `100%`, flexFlow: `row nowrap`, justifyContent: `space-between`, padding: `1rem 0`}}>
+        <article class="wrapper">
+          <div className={blogStyles.flow} dangerouslySetInnerHTML={{__html: html}}/>
+
+        </article>
+        {/* <div className={containerStyles.aside}>
+          <p><i>Nicola is a web developer from Vancouver, B.C. and a professional curator of random facts.</i></p>
+        </div> */}
+
+        <div>
           <p>
           {prev &&
             <Link to={prev.frontmatter.path}>
@@ -44,9 +46,6 @@ const Template = ({data, location, pageContext}) => {
             </Link>}
         </p>
       </div>
-
-      </div>
-    </div>
   </Layout>
   )
 }

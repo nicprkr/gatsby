@@ -1,0 +1,5 @@
+.card {
+    border: 1px solid var(--white);
+    display: flex;
+    flex-flow: column;
+}

@@ -1,12 +1,19 @@
-@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;500;700&display=swap');
+
 :root {
-  --color: #3D348B;
-  --secondary: #CA054D;  
-  --dark: #233131;
-  --light: #c4b9ae;
-  --pink: #ca054d;
-  --yellow: #FFFF66;
-  --grey: #cacaca;
+  --spacing: 1rem;
+  --mobile-breakpoint: 768px;
+  --tablet-breakpoint: 1200px;
+  --black: #111;
+  --dark-grey: #333;
+  --grey: #666;
+  --light-grey: #999;
+  --white: #f6f6f6;
+  --primary: hsl(174.4, 94.9%, 45%);
+  --primary-light: hsl(174.4, 74.9%, 80%);
+  --primary-dark: hsl(174.4, 74.9%, 15%);
+  --ant-primary: hsl(195, 89%, 50%);
+  --ant-primary-light: hsl(195, 89%, 50%);
 }
     /* Box sizing rules */
     *,
@@ -17,26 +24,15 @@
     }
     
   ::selection {
-    background: var(--yellow);
+    background: var(--ant-primary);
+    color: var(--dark-grey);
   }
-.atrocious::selection {
-    background-color: yellow;
-    color: var(--color);
-    cursor: crosshair !important;
-    caret-color: red;
-    outline: 2px solid var(--secondary);
-    text-decoration: green wavy underline;
-    text-emphasis-color: blue;
-    text-shadow: 12px 6px 6px orange;
-}
 
   html {
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, sans-serif;
       line-height: 1.5;
       scroll-behavior: smooth;
-      -ms-text-size-adjust: 100%;
-      -webkit-text-size-adjust: 100%;
     }
 
     /* Set core body defaults */
@@ -44,11 +40,10 @@ body {
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
-  background-color: rgb(248, 234, 234);
-  color: #3d3d3d;
   line-height: 1.5;
     font-size: 18px;
-    font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--dark-grey);
+    color: var(--white);
 }
 
 
@@ -77,8 +72,6 @@ dd {
   margin: 0;
 }
 
-
-
 /* Remove list styles on ul, ol elements with a class attribute */
 ul[class],
 ol[class] {
@@ -97,9 +90,9 @@ img {
 }
 
 /* Natural flow and rhythm in articles by default */
-/* article > * + * {
+ article > * + * {
   margin-top: 1.4em;
-} */
+} 
 
 /* Inherit fonts for inputs and buttons */
 input,
@@ -118,46 +111,67 @@ select {
     scroll-behavior: auto !important;
   }
 }
+/* h1,h2,h3,h4,h5,h6 {
+  font-family: 'Work Sans', Roboto, Helvetica, Arial, sans-serif;
+} */
+h1, h2, h3 {
+  font-weight: 700;
 
-
-a:not(.not-text) {
-  color: var(--pink);
-  text-decoration: none;
-  position: relative;
-  z-index:99;
+}
+h4, h5, h6 {
+  font-weight: 500;
+}
+h2, h3 {
+  margin-bottom: calc(var(--spacing) / 2)
+}
+a:not([class]) {
+  color:var(--primary);
+  transition: 0.2s;
+}
+a:not([class]):hover {
+  color:var(--primary-light);
+}
+a:not([class]):active {
+  color: var(--ant-primary-light);
+}
+a:not([class]):visited {
+  color: var(--ant-primary-light);
 }
 a:focus {
-  outline: 2px dotted var(--pink);
+  outline: 2px dotted var(--grey);
 }
-a:not(.not-text)::after {
-  content: '';
-  left: 0;
-  bottom: 0;
-  min-height: 8px;
-  height: 20%;
-  max-width:800px;
-  width:100%;
-  background: var(--yellow);
-  display: inline-block;
-  position: absolute;
-  z-index: -1;
+main {
+  padding: 0 var(--spacing)
 }
-a:not(.not-text):hover {
-  opacity: 0.9;
+section {
+  padding: calc(var(--spacing) * 2) 0;
 }
-a:not(.not-text):hover::after {
-  height: 20px;
+footer {
+    display: flex;
+    justify-content: space-between;
 }
-    footer {
-        padding:2rem 0;
-        max-width:1200px;
-        margin:0 auto;
-        font-size: 0.8rem;
-    }
-    h1, h2, h3 {
-      font-family: 'Share Tech Mono', monospace;
+pre {
+  overflow-x: auto;
+  max-width: 100%;
+}
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px){
+  :root {
+    --spacing: 2rem;
+  }
 
-    }
-    h2 {
-      margin-bottom: 1.2rem;
-    }
+}
+@media screen and (min-width: 1400px){
+  :root {
+    --spacing: 3rem;
+  }
+
+}
+@Media screen and (min-width: 1600px){
+  .wrapper {
+    min-width: 1400px;
+  }
+}

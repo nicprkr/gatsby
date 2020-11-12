@@ -4,15 +4,15 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import containerStyles from "../components/container.module.css"
 
-const Projects = ({ data }) => {
+const Blog = ({ data }) => {
   const {edges: posts} = data.allMarkdownRemark;
   return (
   
   <Layout>
-    <SEO title="Nicola Parker Web Developer Projects" />
-<h1>Projects</h1>
+    <SEO title="Blog" />
+<h1>Blog</h1>
     <section>
-{/* 
+
 <h2 class="spaced">Recent Posts</h2>
 {posts.map (({node: post}) => {
         const {frontmatter} = post;
@@ -38,34 +38,34 @@ const Projects = ({ data }) => {
             </ul>
           </div>
         );
-      })} */}
+      })}
 
   </section>
   </Layout>
   )
 }
 
-export default Projects
+export default Blog
 
-// export const query = graphql`
-// query placeholderQuery {
-//   allMarkdownRemark {
-//     edges {
-//       node {
-//         id
-//         frontmatter {
-//           date
-//           title
-//           tags
-//           path
-//           excerpt
-//         }
-//       }
-//     }
-//   }
-// }
+export const query = graphql`
+query blogQuery {
+  allMarkdownRemark {
+    edges {
+      node {
+        id
+        frontmatter {
+          date
+          title
+          tags
+          path
+          excerpt
+        }
+      }
+    }
+  }
+}
 
-// `
+`
 
 
 

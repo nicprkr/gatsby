@@ -1,37 +1,49 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import styles from "./header.module.css"
-// import Logo from '../images/Logo'
+import Logo from "./logo.js"
 import React from "react"
 
-const Header = () => (
-  <header className={styles.header}>
-    <section className={styles.wrapper}>
+const Header = ( {data} ) => {
+  console.log(data)
+  // const schemeToggle = <div>🌑</div>;
+  return (
+  <header className={styles.navbar}>
+    <nav class="wrapper">
         <div className={styles.homelink}>
         <Link to="/">
-           {/* <Logo />  */}
+          <Logo color="white" />
+
           </Link>
 
       </div>
-      <ul className={styles.navlinks}> 
+      <ul > 
           <li>
-            <Link className={styles.bigHeader} to="/">Nicola Codes</Link>
+            <Link className={styles.navlink} to="/">Nicola Codes</Link>
           </li>
 
       </ul>
-      <ul class="secondary">
+      <ul className={styles.secondary}>
         <li>
-          <Link className={styles.bigHeader} to="/projects/">Projects</Link>
+          <Link className={styles.navlink} to="/projects/">Projects</Link>
         </li>
         <li>
-          <Link className={styles.bigHeader} to="/about/">About</Link>
+          <Link className={styles.navlink} to="/about/">About</Link>
         </li>
+        <li>
+          <Link className={styles.navlink} to="/blog/">Blog</Link>
+        </li>
+        {/* <li>
+          {schemaToggle}
+        </li> */}
 
       </ul>
-    </section>
+
+    </nav>
     
   </header>
 )
+  }
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
@@ -42,3 +54,15 @@ Header.defaultProps = {
 }
 
 export default Header
+
+export const query = graphql`
+query {
+  file {
+      childImageSharp {
+        fluid(maxWidth: 100, maxHeight: 250) {
+          src
+          srcSet
+        }
+      }
+    } 
+}`;

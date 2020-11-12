@@ -19,9 +19,8 @@ const Layout = ({ children }) => (
     render={data => (
       <>
         <Header />
-        <div>
-          <main>{children}</main>
-          <footer style={{display: `flex`, flexDirection: `row`, justifyContent:`space-between`}}>
+        <main>{children}</main>
+        <footer>
             <p>
             © {new Date().getFullYear()} | Built with
             {` `}
@@ -31,7 +30,6 @@ const Layout = ({ children }) => (
             <a href="https://twitter.com/nicprkr">Twitter</a> | <a href="https://dribbble.com/nicprkr/"> Dribbble</a> | <a href="https://www.linkedin.com/in/nicprkr/"> LinkedIn</a> 
             </p>
           </footer>  
-        </div>
       </>
     )}
   />

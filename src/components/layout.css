@@ -1,36 +1,47 @@
 main {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 2px 4px 12px rgba(0,0,0,0.2);
-  max-width:1200px;
-  margin: 0 auto;
-
+  min-height:95vh
 }
-@media screen and (min-width: 700px){
-  article.home {
-      display: grid;
-      grid-template-columns: 1fr 3fr;
-      grid-column-gap: 0;
-      grid-template-rows: auto;
-      grid-template-areas: 
-        "about main "
-        "about main"
-  }
-}
-section.about {
-  grid-area: about;
-  border-right: 1px solid #d4d4d4;
-  padding: 2rem;
-}
-article.home {
-  grid-area: main;
-}
-
-ul.secondary {
+header.intro {
+  min-height: 75vh;
+  padding-top: var(--spacing);
   display: flex;
-  flex-flow: row wrap;
+    flex-direction: column;
+    justify-content: center;
 }
-h2.spaced {
-  padding: 2rem;
-  padding-bottom: 0;
+.number-wrapper {
+  position: absolute;
+  height: 100%;
+  left: -10rem;
+  padding-top: 4px;
+}
+.number {
+  position: sticky;
+  top: calc(var(--spacing) * 1.5);
+  opacity: 0.5;
+  letter-spacing: 1px;
+  font-weight: 700;
+  display:flex;
+}
+.number::before {
+  content: "";
+  width:6rem;
+  left: 0;
+  display: block;
+  align-self:center;
+  height: 1px;
+  background: white;
+}
+.number::after {
+  content: attr(data-number-section);
+  transform: rotate(-90deg);
+
+}
+section,header {
+  position: relative;
+}
+.grid--card-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(8em, 100%), 1fr));
+  grid-column-gap: var(--spacing);
+  grid-row-gap: var(--spacing);
 }
